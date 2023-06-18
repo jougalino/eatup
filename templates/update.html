@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex flex-row-reverse justify-content-center align-items-start flex-wrap" id="update">
+    <div id="register-map"  style="display: none;" >
+        <h3>Region Reference</h3>
+        <p>Click to expand in new tab.</p>
+        <a href="static/img/map-max.png" target="_blank"><img src="static/img/map-max.png" style="width:600px;"></a>
+    </div>
+    <div>
+        <h1>Update an Establishment</h1>
+        <form action="{{ url_for('update') }}" method="post">
+            <input type="hidden" name="establishment_id" value="{{ establishment.id }}">
+            <label for="e_region">Region of Establishment</label>
+            <select name="establishment_region" id="e_region" required>
+                <option disabled selected value>...</option>
+                {% if establishment.region == "north" %}
+                <option value="north" selected>North Quadrant</option>
+                <option value="south">South Quadrant</option>
+                <option value="east">East Quadrant</option>
+                <option value="west">West Quadrant</option>
+                {% elif establishment.region == "south" %}
+                <option value="north">North Quadrant</option>
+                <option value="south" selected>South Quadrant</option>
+                <option value="east">East Quadrant</option>
+                <option value="west">West Quadrant</option>
+                {% elif establishment.region == "east" %}
+                <option value="north">North Quadrant</option>
+                <option value="south">South Quadrant</option>
+                <option value="east" selected>East Quadrant</option>
+                <option value="west">West Quadrant</option>
+                {% elif establishment.region == "west" %}
+                <option value="north">North Quadrant</option>
+                <option value="south">South Quadrant</option>
+                <option value="east">East Quadrant</option>
+                <option value="west" selected>West Quadrant</option>
+                {% endif %}
+            </select><br>
+            <button class="btn btn-sm" onclick="showMap(); return false;" id="showmap-button">View Region Guide</button><br><br>
+            <label for="e_name">Name of Establishment</label>
+            <input type="text" name="establishment_name" id="e_name" value="{{ establishment.name }}" required><br><br>
+            <label for="e_image">Image Link</label>
+            <input type="url" name="establishment_image" id="e_image" value="{{ establishment.image }}" ><br><br>
+            <label for="e_color">Representative Color</label>
+            <input type="color" name="establishment_color" id="e_color" list="ecolors" value="{{ establishment.color }}"><br><br>
+            <datalist id="ecolors">
+                <option value="#626262">Default</option>
+                <option value="#996868">North Quadrant</option>
+                <option value="#997799">South Quadrant</option>
+                <option value="#98996D">East Quadrant</option>
+                <option value="#5D9499">West Quadrant</option>
+            </datalist>
+            <label for="e_address">Address</label>
+            <input type="text" name="establishment_address" id="e_address" value="{{ establishment.address }}"><br><br>
+            <label for="e_contact">Contact Email</label>
+            <input type="email" name="establishment_contact" id="e_contact" value="{{ establishment.contact }}" ><br><br>
+            <label>Brief Description</label><br>
+            <textarea name="establishment_description" placeholder="Tell something about your establishment..." cols="30" rows="10">{{ establishment.description }}</textarea><br><br>
+            <input type="submit" class="btn btn-lg" value="Update Establishment" style="color: #F5EFE7;  background-color: #487549; font-weight: 600; font-size: large;font-family: 'Inter';">
+    </div>
+</div>
+{% endblock %}

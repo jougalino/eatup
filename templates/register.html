@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex flex-row-reverse justify-content-center align-items-start flex-wrap" id="register">
+        <div id="register-map"  style="display: none;" >
+            <h3>Region Reference</h3>
+            <p>Click to expand in new tab.</p>
+            <a href="static/img/map-max.png" target="_blank"><img src="static/img/map-max.png" style="width:600px;"></a>
+        </div>
+        <div>
+            <h1>Register an Establishment</h1>
+            <form action="{{ url_for('processing') }}" method="post">
+                <label for="e_region">Region of Establishment</label><br>
+                <select name="establishment_region" id="e_region" required>
+                    <option disabled selected value>...</option>
+                    <option value="north">North Quadrant</option>
+                    <option value="south">South Quadrant</option>
+                    <option value="east">East Quadrant</option>
+                    <option value="west">West Quadrant</option>
+                </select><br>
+                <button class="btn btn-sm" onclick="showMap(); return false;" id="showmap-button">View Region Guide</button><br><br>
+                <label for="e_name">Name of Establishment</label><br>
+                <input type="text" name="establishment_name" id="e_name"><br><br>
+                <label for="e_image">Image Link</label><br>
+                <input type="url" name="establishment_image" id="e_image"><br><br>
+                <label for="e_color">Representative Color</label><br>
+                <input type="color" name="establishment_color" id="e_color" list="ecolors" value="#626262"><br><br>
+                <datalist id="ecolors">
+                    <option value="#996868">North Quadrant</option>
+                    <option value="#997799">South Quadrant</option>
+                    <option value="#98996D">East Quadrant</option>
+                    <option value="#5D9499">West Quadrant</option>
+                </datalist>
+                <label for="e_address">Address</label><br>
+                <input type="text" name="establishment_address" id="e_address"><br><br>
+                <label for="e_contact">Contact Email</label><br>
+                <input type="email" name="establishment_contact" id="e_contact"><br><br>
+                <label>Brief Description</label><br>
+                <textarea name="establishment_description" placeholder="Tell something about your establishment..." cols="30" rows="10"></textarea><br><br>
+                <input type="submit" class="btn btn-lg" value="Register Establishment" style="color: #F5EFE7;  background-color: #487549; font-weight: 600; font-size: large;font-family: 'Inter';">
+                <input type="reset" class="btn btn-sm" value="Reset Input" style="color: #F5EFE7;  background-color: #8f1946; font-weight: 600; font-size: large;font-family: 'Inter'; margin-top: 10px;">
+            </form>  
+        </div>
+    </div>
+{% endblock %}

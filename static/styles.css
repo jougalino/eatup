@@ -1,0 +1,281 @@
+#home p {
+  color: #F5EFE7;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: large;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#home-buttons button {
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#home-buttons button:hover {
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
+}
+
+#register, #update {
+  padding: 25px;
+}
+
+#register h1, #register h3, #update h1, #update h3 {
+  font-family: "Inter";
+  font-weight: 1000;
+}
+
+#register h1, #update h1 {
+  padding-bottom: 15px;
+}
+
+#register div, #update div {
+  background-color: #F5EFE7;
+  padding: 25px;
+  border-radius: 15px;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+#register label, #update label {
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: large;
+  font-family: "Inter";
+}
+
+#register input, #register select, #register textarea, #update input, #update select, #update textarea {
+  color: #1e1e1e;
+  border-radius: 5px;
+  border-color: #1e1e1e;
+  border-style: solid;
+  width: 100%;
+}
+
+#register textarea, #update textarea {
+  resize: none;
+}
+
+#showmap-button {
+  width: 100%;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  color: #F5EFE7;
+  background-color: #8f1946;
+  margin-top: 5px;
+}
+
+#index-buttons button {
+  width: 30%;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin: 5px;
+}
+
+#index-buttons button:hover {
+  transform: scale(1.05);
+  transition: .3s ease-in-out;
+}
+
+#index {
+  text-align: center;
+}
+
+#index p {
+  color: #F5EFE7;
+  font-weight: 300;
+  font-size: large;
+  font-family: "Inter";
+}
+
+#index li {
+  list-style-type: none;
+}
+
+a {
+  font-weight: 600;
+}
+
+#region-index-heading {
+  text-transform: capitalize;
+  color: #F5EFE7;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin: 50px 50px 30px;
+}
+
+#region-index {
+  display: block;
+  color: #F5EFE7;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: large;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-height: 83vh;
+}
+
+#region-index button{
+  color: #F5EFE7;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: large;
+  margin: 3px;
+}
+
+#region-index-map button{
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Inter", sans-serif; 
+  color: #1e1e1e; 
+  background-color: #e2ebe0;
+  text-transform: capitalize;
+}
+
+#region-index-content {
+  margin: 10vh 5vh 5vh;
+}
+
+#region-index-content button{
+  border-radius: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0px 10px 20px;
+}
+
+#region-index-content button:hover{
+  transform: scale(1.05);
+  transition: .3s ease-in-out;
+}
+
+#profile {
+  min-height: 83vh;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #F5EFE7;
+  font-family: "Inter";
+}
+
+#profile div {
+  margin: 15px;
+}
+
+#profile-image {
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#profile-image form {
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#profile-image img{
+  border-radius: 15px;
+  height: 65vh;
+  width: 65vh;
+  object-fit: cover;
+}
+
+#profile-image img:hover{
+  transform: scale(1.1);
+  transition: .3s ease-in-out;
+}
+
+#profile-page {
+  width: 60%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.profile-info {
+  display: flex;
+}
+
+.profile-info p{
+  font-weight: 1000;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#profile-description p{
+  font-weight: 100;
+  padding-top: 10vh;
+  font-size: 20px;
+}
+
+form 
+{
+  color: white;
+}
+
+.video-container {
+    height: 82vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #1E1E1E;
+    @media(min-width: 600px) {
+      height: 82vh;
+    }
+  }
+  
+.video-container video {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 25%;
+  }
+
+* {
+    box-sizing: border-box;
+  }
+  
+.video-container:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(#1e1e1e, .2);
+    z-index: 1;
+  }
+  
+.callout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+#register-map {
+  text-align: center;
+  justify-content: center;
+}
+
+body {
+  background: linear-gradient(45deg, #454545, #0C0C0C, #1E1E1E);
+  animation: bg 7s infinite;
+  background-size: 300%;
+}
+
+@keyframes bg {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}

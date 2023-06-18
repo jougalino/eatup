@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="region-index">
+    <h1 id="region-index-heading">{{ region }} Quadrant Establishments</h1>
+    <div id="region-index-map">
+        <button class="btn" type="button" onclick="window.location.href='/index';" style="font-weight: 600; color: #F5EFE7; background-color: #1e1e1e;"> 
+            Return to Directory
+        </button>
+        <button class="btn" type="button" onclick="window.open('/static/img/{{ region }}quadrant.png'); return false;">
+            Open {{ region }} Map
+        </button>
+        <button class="btn" type="button" onclick="window.open('/static/img/map-max.png'); return false;">
+            Open Full Map
+        </button>
+    </div>
+    <div id="region-index-content">
+        {% for establishment in eatup %}
+        <button class="btn" type="button" onclick="window.location.href='/region/{{ establishment.id }}';" style="color: white; background-color: {{establishment.color}}">
+            {{establishment.name}}
+        </button>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+{% endblock %}

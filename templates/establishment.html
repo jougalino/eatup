@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex flex-row justify-content-between align-items-start flex-wrap" id="profile" >
+    <div id="profile-image" style="background-color: {{establishment.color}}"> 
+        <a href="{{establishment.image}}" target="_blank"><img src="{{establishment.image}}"></a>
+    </div>
+    <div id="profile-page"> 
+        <h1 style="font-weight: 1000; padding: 15px; border-radius: 15px; color: white; background-color: {{ establishment.color }}">{{ establishment.name }}</h1>
+        <br>
+        <br>
+        <div class="profile-info">
+            <p style="font-weight: 1000; color: {{establishment.color}}">ADDRESS</h2>
+            <p>{{ establishment.address }}</p>
+        </div>
+        <div class="profile-info">
+            <p style="font-weight: 1000; color: {{establishment.color}}">CONTACT EMAIL</p>
+            <p>{{ establishment.contact }}</p>
+        </div>
+        <div id="profile-description">
+            <p>{{ establishment.description }}</p>
+        </div>
+    </div>
+    <div style="width: 100%; text-align: center;">
+        <form action="{{ url_for('modify') }}" method="post">
+            <input type="hidden" name="establishment_id" value="{{ establishment.id }}">
+            <input class="btn" type="button" value="Return to Directory" onclick="window.location.href='/eatup/{{establishment.region}}'; return false" style="font-weight: 600; color: #F5EFE7; background-color: #1e1e1e;">
+            <input class="btn" type="submit" name="modify" value="Edit Entry" style="font-weight: 600; color: #F5EFE7; background-color: {{ establishment.color }}"></input>
+            <input class="btn" type="submit" name="modify" value="Delete Entry"  style="font-weight: 600; color: #F5EFE7; background-color: #8f1946;"></input>
+        </form>
+    </div>
+</div>
+{% endblock %}

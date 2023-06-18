@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="home">
+    <section class="video-container">
+        <video src="/static/vid/video.mp4" autoplay loop playsinline muted></video>
+        <div class="callout">
+            <img src="/static/img/logo.png" style="display: block; width: 40%;">
+            <div id="home-desc">
+                <p>is a directory where food establishments around the UP Diliman Campus can advertise their businesses and students can easily locate food options in the campus.</p>
+            </div>
+                <hr>
+                <div class="d-grid gap-2 d-md-block" id="home-buttons">
+                    <button class="btn btn-lg" type="button" onclick="window.location.href='{{url_for('index')}}';" style="color: #F5EFE7; background-color: #487549">
+                        Find an Establishment
+                    </button>
+                    <button class="btn btn-lg" type="button" onclick="window.location.href='{{url_for('register')}}';" style="color: #1e1e1e; background-color: #e2ebe0;">
+                        Register an Establishment
+                    </button>
+                </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
